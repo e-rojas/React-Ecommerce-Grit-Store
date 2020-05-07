@@ -1,6 +1,9 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {addToCart} from '../../actions'
 export default function ProductCard({ imgLink, prodName, linkTo,basic, marginTop,price}) {
+  const dispatch = useDispatch()
   return (
     <>
       <div style={{width:'16rem',marginTop:marginTop}} className="card pb-0">
@@ -27,7 +30,7 @@ export default function ProductCard({ imgLink, prodName, linkTo,basic, marginTop
          <div className="card-text">
            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
          </div>
-         <button type="button" className="btn btn-primary btn-sm font1 mt-1">
+         <button onClick={()=>dispatch(addToCart({prodName,imgLink,price}))} type="button" className="btn btn-primary btn-sm font1 mt-1">
            add +
              </button>
          </div>

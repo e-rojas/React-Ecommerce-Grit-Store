@@ -8,7 +8,11 @@ import MainPage from './pages/MainPage'
 import StorePage from './pages/StorePage'
 import ContactPage from './pages/Contact'
 import Footer from './components/clothng-store/Footer'
+
 function App() {
+   
+
+
   return (
     <BrowserRouter>
     <Carousel />

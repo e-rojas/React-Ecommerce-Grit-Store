@@ -1,8 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 export default function Header() {
+  const cart = useSelector(state =>state.store)
   return (
-    <nav id='nav' className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <nav
+      id="nav"
+      className="navbar navbar-expand-md navbar-dark bg-dark sticky-top"
+    >
       <NavLink to="/">
         <span
           style={{ color: "#b76e79", letterSpacing: "2px" }}
@@ -11,6 +17,10 @@ export default function Header() {
           GRIT
         </span>
       </NavLink>
+     {cart.length > 0 &&  ( <button type="button" class="btn btn-primary btn-sm">
+        <i class="fas fa-shopping-cart"></i>{" "}
+        <span class="badge badge-light"> {cart.length} </span>
+      </button>)}
 
       <button
         className="navbar-toggler"
@@ -28,16 +38,23 @@ export default function Header() {
         id="navbarNav"
       >
         <ul className="navbar-nav">
-        
           <li className="nav-item ">
-          <NavLink className="nav-link"  to='/'  exact={true} > Home </NavLink>
-
+            <NavLink className="nav-link" to="/" exact={true}>
+              {" "}
+              Home{" "}
+            </NavLink>
           </li>
           <li className="nav-item">
-          <NavLink className="nav-link"  to='/store' > Store </NavLink>
+            <NavLink className="nav-link" to="/store">
+              {" "}
+              Store{" "}
+            </NavLink>
           </li>
           <li className="nav-item">
-          <NavLink className="nav-link"  to='/contact' > Contact </NavLink>
+            <NavLink className="nav-link" to="/contact">
+              {" "}
+              Contact{" "}
+            </NavLink>
           </li>
         </ul>
       </div>
