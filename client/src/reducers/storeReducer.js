@@ -1,5 +1,5 @@
 const initialStateCartList = [
-
+  { id: 1, prodName: "Gangsta", price: 29.0, imgLink: "link" },
 ];
 const storeReducer = (state = initialStateCartList, action) => {
   switch (action.type) {
