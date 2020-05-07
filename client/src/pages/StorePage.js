@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import storeDatabase from "../database/store";
 import ProductCard from "../components/clothng-store/ProductCard";
-import CartDisplay from '../components/clothng-store/CartDisplay'
+import CartDisplay from "../components/clothng-store/CartDisplay";
 
 export default function Store() {
-
   const [storeData, setStoreData] = useState([]);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ export default function Store() {
 
   return (
     <div className="container-fluid">
-     <CartDisplay />
+      <CartDisplay />
       <div id="prduct-select-row" className="row ">
         <div
           style={{ maxWidth: "1200px", margin: "0 auto" }}

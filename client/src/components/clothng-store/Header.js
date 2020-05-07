@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Header() {
-  const cart = useSelector(state =>state.store)
+  const cart = useSelector((state) => state.store);
   return (
     <nav
       id="nav"
@@ -17,10 +17,12 @@ export default function Header() {
           GRIT
         </span>
       </NavLink>
-     {cart.length > 0 &&  ( <button type="button" class="btn btn-primary btn-sm">
-        <i class="fas fa-shopping-cart"></i>{" "}
-        <span class="badge badge-light"> {cart.length} </span>
-      </button>)}
+      {cart.length > 0 && (
+        <button type="button" class="btn btn-primary btn-sm">
+          <i class="fas fa-shopping-cart"></i>{" "}
+          <span class="badge badge-light"> {cart.length} </span>
+        </button>
+      )}
 
       <button
         className="navbar-toggler"
