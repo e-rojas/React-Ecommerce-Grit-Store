@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+/* font-family: 'Righteous', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Modak&display=swap");
+* {
+  scroll-behavior: smooth;
+}
+.font1 {
+  font-family: "Righteous", cursive;
+}
+.font2 {
+  font-family: "Arimo", sans-serif;
+}
+.font3 {
+  font-family: "Modak", cursive;
+  font-size: 28px;
+}
+.h1 {
+  min-height: 400px;
+}
+.color1 {
+  background-color: #ff7577;
+}
+.font-col1 {
+  color: #ff7577;
+}
+
+/* card */
+.card-image {
+  width: 100%;
+  height: 150px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Carrousel */
+.carousel-item {
+  /*   height: 100vh; */
+  height: 500px;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Footer */
+footer {
+  height: 200px;
+  background-color: #343a40;
+  color: #fff;
+}
+/* store main */
+#prduct-select-row {
+  background-image: url("https://images.unsplash.com/photo-1454094309557-181967334e22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+}

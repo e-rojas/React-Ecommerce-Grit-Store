@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./css/clothing.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Carousel from './components/clothng-store/Carrousel'
+import Header from './components/clothng-store/Header'
+import MainPage from './pages/MainPage'
+import StorePage from './pages/StorePage'
+import ContactPage from './pages/Contact'
+import Footer from './components/clothng-store/Footer'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+    <Carousel />
+    <Header />
+    <Switch>
+      <Route  path='/' component={MainPage} exact={true} />
+      <Route path='/store' component={StorePage} />
+      <Route path='/contact' component={ContactPage} />
+    </Switch>
+<Footer />
+  </BrowserRouter>
+  )
 }
 
 export default App;
