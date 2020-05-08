@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, clearAllFromCart } from "../../actions";
-
+import StripeCheckout from "react-stripe-checkout";
 export default function CartDisplay() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.store);
@@ -14,7 +14,13 @@ export default function CartDisplay() {
       {cart.length > 0 && (
         <div className="row">
           <div className="col-md-5 offset-md-3 ">
-            <h5 className="font3 mt-2 mb-0">Cart:</h5>
+            <div className="d-flex pt-1 pb-1 justify-content-around ">
+              {" "}
+              <h5 className="font3 mt-2 mb-0">Cart:</h5>{" "}
+              {cart.length > 0 && <StripeCheckout 
+              amount={totalPrice * 100}
+              />}
+            </div>
             <hr className="mt-0" />
             <ol>
               {cart.map((item) => {
